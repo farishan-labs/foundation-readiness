@@ -1,0 +1,96 @@
+{
+  "updated": "2026-11-09T18:10:09.460664+00:00",
+  "percentage": 25.0,
+  "earned_weight": 3.5,
+  "total_weight": 14,
+  "items": [
+    {
+      "id": "ci_ship_repos",
+      "title": "CI on repos that ship (workflow-kit, cockpit, agent)",
+      "weight": 2,
+      "status": "partial",
+      "auto": true,
+      "evidence": "CI present in 1/3 ship repos: workflow-kit; missing: cockpit, agent."
+    },
+    {
+      "id": "cockpit_m0",
+      "title": "Cockpit M0 complete (LICENSE, CI, goreleaser)",
+      "weight": 1,
+      "status": "partial",
+      "auto": true,
+      "evidence": "1/3 M0 gaps closed: LICENSE=yes, CI workflow dir=no, goreleaser config=no."
+    },
+    {
+      "id": "secrets_hygiene",
+      "title": "Secrets hygiene (.env gitignored in ship repos; Bitwarden in place)",
+      "weight": 1,
+      "status": "todo",
+      "auto": true,
+      "evidence": ".env ignored in 0/3 ship repos: none; not ignored: workflow-kit, cockpit, agent."
+    },
+    {
+      "id": "backup_tested",
+      "title": "Backup 3-2-1 with tested restore drill",
+      "weight": 2,
+      "status": "todo",
+      "auto": true,
+      "evidence": "No marker at /home/faris/.config/foundation/backup-verified. Run a restore drill, then: foundation/check.py --mark-backup."
+    },
+    {
+      "id": "monitoring_deployed",
+      "title": "Monitoring deployed (Beszel + Uptime Kuma alerting)",
+      "weight": 1,
+      "status": "todo",
+      "auto": true,
+      "evidence": "No monitoring marker and no active beszel/uptime-kuma user unit. Run: foundation/check.py --mark-monitoring after deploying."
+    },
+    {
+      "id": "ceo_identity",
+      "title": "CEO identity provisioned (dedicated SSH key/PAT, not null)",
+      "weight": 2,
+      "status": "todo",
+      "auto": true,
+      "evidence": "Provisioned credential fields: 0 (ssh_key=null, token=null)."
+    },
+    {
+      "id": "mfa_audit",
+      "title": "MFA audit across accounts + SSH key hygiene (ed25519)",
+      "weight": 1,
+      "status": "todo",
+      "auto": false,
+      "evidence": ""
+    },
+    {
+      "id": "branch_protection",
+      "title": "Branch protection + PR templates + CODEOWNERS on main",
+      "weight": 1,
+      "status": "todo",
+      "auto": false,
+      "evidence": ""
+    },
+    {
+      "id": "store_live",
+      "title": "Store live (Gumroad product published & purchasable)",
+      "weight": 1,
+      "status": "done",
+      "auto": false,
+      "evidence": "workflow-kit Pro/Team + Free starter published."
+    },
+    {
+      "id": "analytics_live",
+      "title": "Analytics live (GoatCounter tracking farishan.com + han)",
+      "weight": 1,
+      "status": "done",
+      "auto": false,
+      "evidence": "GoatCounter on han VPS."
+    },
+    {
+      "id": "runbooks",
+      "title": "Deploy/restore runbooks present",
+      "weight": 1,
+      "status": "todo",
+      "auto": true,
+      "evidence": "No *runbook* files found in agent/docs, cockpit, or labs root."
+    }
+  ]
+}
