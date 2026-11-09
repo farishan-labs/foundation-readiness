@@ -42,3 +42,7 @@ blockers for a sustainable first dollar.
 
 Do not start new research spending until readiness >= 80% (or an explicit
 L0 override). Re-run after each gap is closed.
+
+Note: "published" is not "done". `first_sale` requires an actual purchase;
+`product_qa_market_gap` requires evidence of value/market fit, not just
+shipping code.

@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-09T18:10:09.460664+00:00",
-  "percentage": 25.0,
+  "updated": "2026-11-09T18:16:16.962923+00:00",
+  "percentage": 20.6,
   "earned_weight": 3.5,
-  "total_weight": 14,
+  "total_weight": 17,
   "items": [
     {
       "id": "ci_ship_repos",
@@ -69,12 +69,20 @@
       "evidence": ""
     },
     {
-      "id": "store_live",
-      "title": "Store live (Gumroad product published & purchasable)",
-      "weight": 1,
-      "status": "done",
+      "id": "product_qa_market_gap",
+      "title": "Product QA: evidence we build something valuable / fill a market gap",
+      "weight": 2,
+      "status": "partial",
       "auto": false,
-      "evidence": "workflow-kit Pro/Team + Free starter published."
+      "evidence": "Demand validation verdict: pivot paid positioning to OpenCode-native toolchain; generic SDD kit is table stakes/free. No WTP survey yet."
+    },
+    {
+      "id": "first_sale",
+      "title": "First real sale (product validated by purchase, not just published)",
+      "weight": 2,
+      "status": "todo",
+      "auto": false,
+      "evidence": "Gumroad products published; no purchases yet."
     },
     {
       "id": "analytics_live",
