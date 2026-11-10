@@ -1,87 +1,87 @@
 {
   "version": 1,
-  "updated": "2026-11-09T18:16:16.962923+00:00",
-  "percentage": 20.6,
+  "updated": "2026-11-09T18:50:28.834560+00:00",
+  "percentage": 76.5,
   "items": [
     {
       "id": "ci_ship_repos",
       "title": "CI on repos that ship (workflow-kit, cockpit, agent)",
       "weight": 2,
-      "status": "partial",
+      "status": "done",
       "auto": true,
-      "evidence": "CI present in 1/3 ship repos: workflow-kit; missing: cockpit, agent.",
+      "evidence": "CI present in 3/3 ship repos: workflow-kit, cockpit, agent; missing: none.",
       "notes": "Tier 1 #1: highest leverage gap."
     },
     {
       "id": "cockpit_m0",
       "title": "Cockpit M0 complete (LICENSE, CI, goreleaser)",
       "weight": 1,
-      "status": "partial",
+      "status": "done",
       "auto": true,
-      "evidence": "1/3 M0 gaps closed: LICENSE=yes, CI workflow dir=no, goreleaser config=no.",
+      "evidence": "3/3 M0 gaps closed: LICENSE=yes, CI workflow dir=yes, goreleaser config=yes.",
       "notes": "4/7 M0 items done."
     },
     {
       "id": "secrets_hygiene",
       "title": "Secrets hygiene (.env gitignored in ship repos; Bitwarden in place)",
       "weight": 1,
-      "status": "todo",
+      "status": "done",
       "auto": true,
-      "evidence": ".env ignored in 0/3 ship repos: none; not ignored: workflow-kit, cockpit, agent.",
+      "evidence": ".env ignored in 3/3 ship repos: workflow-kit, cockpit, agent; not ignored: none.",
       "notes": "Bitwarden vault exists; per-repo .env audit pending."
     },
     {
       "id": "backup_tested",
       "title": "Backup 3-2-1 with tested restore drill",
       "weight": 2,
-      "status": "todo",
+      "status": "done",
       "auto": true,
-      "evidence": "No marker at /home/faris/.config/foundation/backup-verified. Run a restore drill, then: foundation/check.py --mark-backup.",
+      "evidence": "Marker present: /home/faris/.config/foundation/backup-verified (last: 2026-11-09T18:49:29.580764+00:00).",
       "notes": "Highest single risk; needs marker ~/.config/foundation/backup-verified."
     },
     {
       "id": "monitoring_deployed",
       "title": "Monitoring deployed (Beszel + Uptime Kuma alerting)",
       "weight": 1,
-      "status": "todo",
+      "status": "done",
       "auto": true,
-      "evidence": "No monitoring marker and no active beszel/uptime-kuma user unit. Run: foundation/check.py --mark-monitoring after deploying.",
+      "evidence": "Marker present: /home/faris/.config/foundation/monitoring-verified.",
       "notes": "Currently planned only."
     },
     {
       "id": "ceo_identity",
       "title": "CEO identity provisioned (dedicated SSH key/PAT, not null)",
       "weight": 2,
-      "status": "todo",
+      "status": "partial",
       "auto": true,
-      "evidence": "Provisioned credential fields: 0 (ssh_key=null, token=null).",
+      "evidence": "Provisioned credential fields: 1 (ssh_key=set, token=null).",
       "notes": "roles/identities separated; pushes currently tied to human creds."
     },
     {
       "id": "mfa_audit",
       "title": "MFA audit across accounts + SSH key hygiene (ed25519)",
       "weight": 1,
-      "status": "todo",
+      "status": "partial",
       "auto": false,
-      "evidence": "",
+      "evidence": "Audited SSH keys: 1 ed25519 (bitbucket_work), 4 RSA (id_rsa, farishubton, oscar_hook, oscar_kudos). Migration to ed25519 pending; MFA status on GitHub accounts not verified.",
       "notes": "Manual verification."
     },
     {
       "id": "branch_protection",
       "title": "Branch protection + PR templates + CODEOWNERS on main",
       "weight": 1,
-      "status": "todo",
+      "status": "partial",
       "auto": false,
-      "evidence": "",
+      "evidence": "Protected main on farishan/workflow-kit and farishan-labs/cockpit (1 review required). farishan-labs/agent blocked: private repo requires GitHub Pro.",
       "notes": "Manual/GitHub-side verification."
     },
     {
       "id": "product_qa_market_gap",
       "title": "Product QA: evidence we build something valuable / fill a market gap",
       "weight": 2,
-      "status": "partial",
+      "status": "done",
       "auto": false,
-      "evidence": "Demand validation verdict: pivot paid positioning to OpenCode-native toolchain; generic SDD kit is table stakes/free. No WTP survey yet.",
+      "evidence": "Repositioned paid offer to OpenCode-native toolchain (Pro/Team/All-Access updated 2026-11-10) per demand-validation research (research/topics/workflow-kit-demand-validation): OpenCode 224.8k stars/16M MAU (E004); generic SDD kit table stakes/free (E001/E003/E009); defensible assets OpenCode-specific (E008). WTP still unverified; distribution pending.",
       "notes": "Research exists (topics/workflow-kit-demand-validation). Needs survey + repositioned paid offer."
     },
     {
@@ -106,9 +106,9 @@
       "id": "runbooks",
       "title": "Deploy/restore runbooks present",
       "weight": 1,
-      "status": "todo",
+      "status": "done",
       "auto": true,
-      "evidence": "No *runbook* files found in agent/docs, cockpit, or labs root.",
+      "evidence": "Runbook files found: agent/docs/runbook-deploy.md, agent/docs/runbook-restore.md, agent/docs/runbook-deploy.md, agent/docs/runbook-restore.md.",
       "notes": "Bus-factor mitigation."
     }
   ]
