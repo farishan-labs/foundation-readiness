@@ -29,7 +29,7 @@ python3 ~/dev/labs/foundation/check.py --mark-monitoring
 ## Items
 
 See `foundation.json` for the full list, weights, and notes. High-weight gaps
-(backup, CI, CEO identity) dominate the score on purpose — they are the
+(backup, CI, Director identity) dominate the score on purpose — they are the
 blockers for a sustainable first dollar.
 
 ## Files

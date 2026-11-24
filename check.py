@@ -140,11 +140,11 @@ def check_monitoring_deployed(item):
     item["evidence"] = "No monitoring marker and no active beszel/uptime-kuma user unit. Run: foundation/check.py --mark-monitoring after deploying."
 
 
-def check_ceo_identity(item):
-    path = AGENT / "identities" / "ceo.yaml"
+def check_director_identity(item):
+    path = AGENT / "identities" / "director.yaml"
     if not path.exists():
         item["status"] = "todo"
-        item["evidence"] = "identities/ceo.yaml missing."
+        item["evidence"] = "identities/director.yaml missing."
         return
     text = path.read_text()
     # look for key-like fields with non-null/non-empty values
@@ -191,7 +191,7 @@ CHECKS = {
     "secrets_hygiene": check_secrets_hygiene,
     "backup_tested": check_backup_tested,
     "monitoring_deployed": check_monitoring_deployed,
-    "ceo_identity": check_ceo_identity,
+    "director_identity": check_director_identity,
     "runbooks": check_runbooks,
 }
 
